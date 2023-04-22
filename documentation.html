@@ -1,90 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>My Programming Language Documentation</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <!-- Navigation bar -->
-    <nav class="navbar">
-      <div class="container">
-        <a href="#" class="navbar-logo">My Programming Language</a>
-        <button class="navbar-toggler" id="navbar-toggler">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse" id="navbar-collapse">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a href="#" class="nav-link">Getting Started</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Syntax</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Variables</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Operators</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Control Structures</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Functions</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Modules</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Examples</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">FAQ</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Programming Language Documentation</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Csq Documentation</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="#introduction">Introduction</a></li>
+			<li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#hello-world">Hello World</a></li>
+			<li><a href="#data-types">Data Types</a></li>
+			<li><a href="#control-structures">Control Structures</a></li>
+			<li><a href="#functions">Functions</a></li>
+			<li><a href="#libraries">Libraries</a></li>
+			<li><a href="#examples">Examples</a></li>
+			<li><a href="#conclusion">Conclusion</a></li>
+		</ul>
+	</nav>
+	<main>
+		<section id="introduction">
+			<h2>Introduction</h2>
+			<p>Csq is a high level easy and transpiled programming language whose syntax is very much similar to Python and having the speed of C++.</p>
+            <p>It was designed by Aniket Kumar in 2022.</p>
+		</section>
+		<section id="getting-started">
+			<h2>Getting Started</h2>
+			<p>There are total two functional versions of Csq but in this case we are going to use version (4.2)</p>
+            <section id="download" style="padding: 20px;">
+                <div class="commands-container">
+                  <pre class="terminal">
+                    <code>
+                      $ git clone https://github.com/CsqLang/Csq4 
+                      $ cd Csq4/
+                      $ bash build.sh
+                    </code>
+                  </pre>
+                </div>			 
+                <h12>Now you are good to go!!</h12> 
+            </section>
+		</section>
+        <section id="hello-world">
+			<h2>Hello World program</h2>
+			<p>Let's create our first program in Csq</p>
+            <li>Create a file hello.csq</li>
+            <li>Write code inside it:</li>
+            <pre class="terminal" style="background-color: #000000;">
+                <code style="color:white">
+                  print('Hello, World!')
+                </code>
+            </pre>
+            <li>Let's run it</li>
+            <pre class="terminal">
+                <code>
+                  $ ./csq cpp hello 'current-directory' 
+                  <br>
+                <code style="color:green; background-color: #000000;">>> Hello, World!</code>
+                </code>
+            </pre>
+		</section>
+		<section id="data-types">
+			<h2>Data Types</h2>
+			<p>Csq is a statically typed programming language so the data types of a variable can't be changed</p>
+            <h5>Builtin data-types</h5>
+            <li>int</li>
+            <li>float</li>
+            <li>double</li>
+            <li>list</li>
+            <li>str</li>
+            <p>By default Csq uses type inference so no type checking will be there during transpilation but at last it will be there.</p>
+            <h4>Creating a Variable</h4>
+            <pre class="terminal" style="background-color: #000000;">
+                <code style="color:white">
+                  a = 405
+                  print(a)
+                </code>
+                <p style="color:#ffffff">Output:</p>
+                <code style="color:green; background-color: #000000;">>> 405</code>
+            </pre>
+            <p>By default variables use stack memory which increases the performance.</p>
+		</section>
+		<section id="control-structures">
+			<h2>Control Structures</h2>
+			<p></p>
+		</section>
+		<section id="functions">
+			<h2>Functions</h2>
+			<p></p>
+		</section>
+		<section id="libraries">
+			<h2>Libraries</h2>
+			<p></p>
+		</section>
+		<section id="examples">
+			<h2>Examples</h2>
+			<p></p>
+		</section>
+		<section id="conclusion">
+			<h2>Conclusion</h2>
+			<p></p>
+		</section>
+	</main>
+	<footer>
+		<p>Created by Aniket Kumar</p>
+	</footer>
+</body>
+</html>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
 
-    <!-- Main content -->
-    <main class="container">
-      <h1>Welcome to My Programming Language Documentation</h1>
-      <p>
-        This documentation will guide you through the process of learning My Programming Language.
-      </p>
+header {
+    background-color: #2D3748;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+}
 
-      <section id="getting-started">
-        <h2>Getting Started</h2>
-        <p>
-          This section will guide you through the process of getting started with My Programming Language.
-        </p>
-      </section>
+nav {
+    background-color: #E2E8F0;
+    padding: 20px;
+}
 
-      <section id="syntax">
-        <h2>Syntax</h2>
-        <p>
-          This section will cover the syntax of My Programming Language.
-        </p>
-      </section>
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
-      <section id="variables">
-        <h2>Variables</h2>
-        <p>
-          This section will cover how to declare and use variables in My Programming Language.
-        </p>
-      </section>
+nav li {
+    margin: 10px 0;
+}
 
-      <section id="operators">
-        <h2>Operators</h2>
-        <p>
-          This section will cover the operators that can be used in My Programming Language.
-        </p>
-      </section>
+nav a {
+    color: #2D3748;
+    text-decoration: none;
+}
 
-      <section id="control-structures">
-        <h2>Control Structures</h2>
-        <p>
-          This section will cover the control structures that can be used in My Programming Language.
-        </p>
-      </section>
+nav a:hover {
+    color: #FFFFFF;
+    background-color: #2D3748;
+}
 
-      <section id="functions">
-        <h2>Functions</h2>
-        <p>
-          This section will cover how to declare and use functions in My Programming Language.
-        </p>
-      </section>
+main {
+    padding: 20px;
+}
 
-      <section id="modules">
-        <h2>Modules</h2>
-        <p>
-          This section will cover how to create and use modules in My Programming Language.
-        </p>
-      </section>
-      </body>
-    </html>
+section {
+    margin: 40px 0;
+}
+
+h2 {
+    font-size: 28px;
+    color : #02490f;
+}
+
+footer {
+    background-color: #2D3748;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+}
+
+</style>
