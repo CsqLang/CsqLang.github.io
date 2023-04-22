@@ -9,10 +9,9 @@
 	<header>
 		<nav>
 			<ul>
-				<li><a href="#">Home</a></li>
 				<li><a href="#about">About</a></li>
-				<li><a href="#services">Services</a></li>
-				<li><a href="#">Contact</a></li>
+				<li><a href="/documentation.html">Docs</a></li>
+				<li><a href="#download">Install</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -22,11 +21,11 @@
 			<div class="home-content">
 				<h1 class = "title_csq">Csq</h1>
 				<h5 class = "csqdef">Csq is a high level programming language which is inspired by the speed of C++ and productivity of Python.</h5>
-				<a href="#" class="btn">Get Started</a>
+				<a href="#download" class="btn">Get Started</a>
 			</div>
 		</section>
 
-		<section id="about" style="background-color: #19a974; padding: 20px;">
+		<section id="about" style="background-color: #007d9c; padding: 20px;">
 			<h2 style = "color:white">About</h2>
 			<p style = "color:white"> Csq is a programming language created by <a href = "https://github.com/AniketKumar2500">Aniket Kumar</a> in 2022 which provides:</p>
 			<li style="color: #ffffff; font-weight: 600; font-family: Arial, Helvetica, sans-serif;">Easy Syntax</li>
@@ -35,17 +34,32 @@
 			<li style="color: #ffffff; font-weight: 600; font-family: Arial, Helvetica, sans-serif;">Statically Typed</li>
 			<li style="color: #ffffff; font-weight: 600; font-family: Arial, Helvetica, sans-serif;">Object Oriented</li>
 			<li style="color: #ffffff; font-weight: 600; font-family: Arial, Helvetica, sans-serif;">Memory Safety</li>
+			<br>
+			<h3 style="color: #ffffff;">How it works?</h3>
+			<p style="color: #ffffff;">It's a transpiled language which is written in C & C++ and having the syntax very similar to Python. It uses a transpiler which transpiles the code into a target language currently it's C++ but we hope there will be a support for Javascript to allow web development directly. To compile the code converted into C++ it uses a VM which uses g++ or clang++ compiler to compile into machine code and this produces the blazing speed of program.</p>
+
 		</section>
 
-		<section id="services">
-			<h2>Our Services</h2>
-			<!-- <ul> -->
-				<li style="color: #430090; font-weight: 500; font-family: Arial, Helvetica, sans-serif;">Embedded Systems : Since Csq is transpiled we could use the transpiler to C++ in order to target low level devices.</li>
-				<li style="color: #430090; font-weight: 500; font-family: Arial, Helvetica, sans-serif;">Desktop App Development : We could existing tools like qt to develop desktop apps</li>
-				<li style="color: #430090; font-weight: 500; font-family: Arial, Helvetica, sans-serif;">No limit : We could use any existing C++ tool to perform different operations(Coming soon)</li>
-			<!-- </ul> -->
+		<section id="download" style="padding: 20px;">
+			<h2>Download for linux</h2>
+			<div class="commands-container">
+			  <pre class="terminal">
+				<code>
+				  $ git clone https://github.com/CsqLang/Csq4 
+				  $ cd Csq4/
+				  $ bash build.sh
+				</code>
+			  </pre>
+			</div>			 
+			<h12>Now you are good to go!!</h12> 
 		</section>
-
+		  
+		<section id="Community" style="padding: 20px;background-color: #dafcff;">
+			<h2 style="color:#080071">Community</h2>
+			<p>We are having a organization on github which holds the repo of Csq programming language and anyone could contribute since it's open source.</p>
+			<a href = "https://github.com/CsqLang/"><img src = "logo.png"></a>
+		</section>
+		  
 	</main>
 </body>
 <style>
@@ -135,7 +149,7 @@ transition: all 0.3s ease-in-out;
 
 #about {
 	background-color: #45ffdd;
-	height: 80vh;
+	height: 100vh;
 	align-items: center;
 	border:1px solid #999;
 }
@@ -143,62 +157,21 @@ transition: all 0.3s ease-in-out;
 #about h2 {
 margin-bottom: 1rem;
 }
-
-#services {
-background-color: #f5f5f5;
-padding: 2rem;
+.terminal {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: auto;
+  border-radius: 5px;
 }
 
-#services h2 {
-margin-bottom: 1rem;
+.terminal code {
+  display: block;
+  white-space: pre;
 }
-
-#services ul {
-list-style: none;
-}
-
-#services li {
-margin-bottom: 0.5rem;
-}
-
-#contact {
-background-color: #fff;
-padding: 2rem;
-}
-
-#contact h2 {
-margin-bottom: 1rem;
-}
-
-/* form {
-display: flex;
-flex-direction: column;
-}
-
-form label {
-margin-bottom: 0.5rem;
-}
-
-form input, form textarea {
-padding: 0.5rem;
-margin-bottom: 1rem;
-border-radius: 0.25rem;
-border: 1px solid #ccc;
-}
-
-form input[type="submit"] {
-background-color: #333;
-color: #fff;
-padding: 1rem 2rem;
-border: none;
-border-radius: 2rem;
-}
-
-/* form input[type="submit"]:hover {
-background-color: #fff;
-color: #333;
-transition: all 0.3s ease-in-out;
-} */
 
 
 </style>
