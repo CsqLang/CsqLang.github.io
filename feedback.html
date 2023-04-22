@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Feedback - Csq</title>
+  </head>
+  <body>
+    <div class="feedback-container">
+        <h2>Send us your feedback!</h2>
+        <form action="mailto:geek.aniket.coder@gmail.com" method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+      
+          <label for="feedback">Feedback:</label>
+          <textarea id="feedback" name="feedback" placeholder="Enter your feedback" required></textarea>
+      
+          <input type="submit" value="Send">
+        </form>
+      </div>
+      
+  </body>
+</html>
+<style>
+    .feedback-container {
+  margin: 50px auto;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.feedback-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.feedback-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.feedback-container input,
+.feedback-container textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.feedback-container input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.feedback-container input[type="submit"]:hover {
+  background-color: #0069d9;
+}
+
+</style>
