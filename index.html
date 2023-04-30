@@ -10,8 +10,9 @@
 		var counter = 0;
 		function increment() {
   			counter++;
-  			document.getElementById("counter").innerHTML = counter;
+  			document.getElementById("views").innerHTML = counter;
 		}
+
 
 	</script>
 <body onload = "increment()">
@@ -22,7 +23,7 @@
 				<li><a href="/documentation.html">Docs</a></li>
 				<li><a href="#download">Install</a></li>
 				<li><a href = "/feedback.html">Feedback</a></li>
-				<li>Views:<span id = 'views'></span></li>
+				<li>Views:<span id = 'views'>0</span></li>
 			</ul>
 		</nav>
 	</header>
