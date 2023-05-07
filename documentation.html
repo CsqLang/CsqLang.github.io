@@ -20,6 +20,7 @@
 			<li><a href="#data-types">Data Types</a></li>
 			<li><a href="#control-structures">Control Structures</a></li>
 			<li><a href="#functions">Functions</a></li>
+			<li><a href="#classes">Classes</a></li>
             <li><a href="#imports">Importing Modules</a></li>
             <li><a href="#prac">Practice Programs</a></li>
 		</ul>
@@ -182,6 +183,25 @@
                 </code>
             </pre>
             Note: functions in Csq doesn't support recursion since it's causes stack overflow and makes the program slow.
+		</section>
+		<section id="classes">
+			<h2>Classes</h2>
+			<p>Classes are the blueprints from which object are created which are having certain predefined variables and methods which can be used to change the flow of the program.</p>
+			<br>
+			<p>In Csq4.2 to define methods or variables inside a class, explicit typing is required no type inference will be working.</p>
+            <pre class="terminal" style="background-color: #000000;">
+                <code style="color:white">
+                    class myclass:
+		     def hi()->void:
+		      print('Hi')
+		    obj = myclass()
+		    obj.hi()
+                </code>
+                <p style="color:#ffffff">Output:</p>
+                <code style="color:green; background-color: #000000;">>> Hi
+                </code>
+            </pre>
+           
 		</section>
         <section id="imports">
 			<h2>Importing Modules</h2>
