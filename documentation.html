@@ -1,373 +1,380 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Csq Documentation</title>
-	<link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+    <title>Csq Documentation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        #container {
+            display: flex;
+            flex: 1;
+        }
+
+        #sidebar {
+            flex: 0 0 200px;
+            background-color: #f1f1f1;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        #content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        nav {
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin-bottom: 10px;
+        }
+    </style>
+    
+    <style>
+        /* Styling for code blocks */
+        pre {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow: auto;
+        }
+    
+        code {
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        }
+    
+        /* Styling for the copy button */
+        .copy-button {
+            background-color: #464646;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+    </style>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+                const parent = block.parentNode;
+                if (parent.tagName === 'PRE') {
+                    const copyButton = document.createElement('button');
+                    copyButton.innerText = 'Copy';
+                    copyButton.className = 'copy-button';
+                    copyButton.addEventListener('click', () => {
+                        const textArea = document.createElement('textarea');
+                        textArea.value = block.innerText;
+                        document.body.appendChild(textArea);
+                        textArea.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(textArea);
+                        alert('Code copied to clipboard!');
+                    });
+                    parent.insertBefore(copyButton, block);
+                }
+            });
+        });
+    </script>
+
+    
 </head>
 <body>
-	<header>
-        <a href = "index.html" style="color:white">Back to Home</a>
-		<h1>Csq Documentation</h1>
-	</header>
-	<nav>
-		<ul>
-			<li><a href="#introduction">Introduction</a></li>
-			<li><a href="#getting-started">Getting Started</a></li>
-            <li><a href="#hello-world">Hello World</a></li>
-			<li><a href="#data-types">Data Types</a></li>
-			<li><a href="#control-structures">Control Structures</a></li>
-			<li><a href="#functions">Functions</a></li>
-			<li><a href="#classes">Classes</a></li>
-            <li><a href="#imports">Importing Modules</a></li>
-            <li><a href="#prac">Practice Programs</a></li>
-		</ul>
-	</nav>
-	<main>
-		<section id="introduction">
-			<h2>Introduction</h2>
-			<p>Csq is a high level easy and transpiled programming language whose syntax is very much similar to Python and having the speed of C++.</p>
-            <p>It was designed by Aniket Kumar in 2022.</p>
-		</section>
-		<section id="getting-started">
-			<h2>Getting Started</h2>
-			<p>There are total two functional versions of Csq but in this case we are going to use version (4.2)</p>
-            <section id="download" style="padding: 20px;">
-                <div class="commands-container">
-                  <pre class="terminal">
-                    <code>
-                      $ git clone https://github.com/CsqLang/Csq4 
-                      $ cd Csq4/
-                      $ bash build.sh
-                    </code>
-                  </pre>
-                </div>			 
-                <h12>Now you are good to go!!</h12> 
-            </section>
-		</section>
-        <section id="hello-world">
-			<h2>Hello World program</h2>
-			<p>Let's create our first program in Csq</p>
-            <li>Create a file hello.csq</li>
-            <li>Write code inside it:</li>
-            <pre class="terminal" style="background-color: #000000;">
-                <code style="color:white">
-                  print('Hello, World!')
-                </code>
-            </pre>
-            <li>Let's run it</li>
-            <pre class="terminal">
-                <code>
-                  $ ./csq cpp hello 'current-directory' 
-                  <br>
-                <code style="color:green; background-color: #000000;">>> Hello, World!</code>
-                </code>
-            </pre>
-		</section>
-		<section id="data-types">
-			<h2>Data Types</h2>
-			<p>Csq is a statically typed programming language so the data types of a variable can't be changed</p>
-            <h5>Builtin data-types</h5>
-            <li>int</li>
-            <li>float</li>
-            <li>double</li>
-            <li>list</li>
-            <li>str</li>
-            <p>By default Csq uses type inference so no type checking will be there during transpilation but at last it will be there.</p>
-            <h4>Creating a Variable</h4>
-            <pre class="terminal" style="background-color: #000000;">
-                <code style="color:white">
-                  a = 405
-                  print(a)
-                </code>
-                <p style="color:#ffffff">Output:</p>
-                <code style="color:green; background-color: #000000;">>> 405</code>
-            </pre>
-            <p>By default variables use stack memory which increases the performance.</p>
-		</section>
-		<section id="control-structures">
-			<h2>Control Structures</h2>
-			<p>Csq supports all types of control structures present in Python.</p>
-            <p>But be aware of the indentation since Csq doesn't consider tabs as indents.</p>
-            <h3>If stmt</h3>
-            <p>If statement will exectue a block of statement only when condition is true.</p>
-            <pre class="terminal" style="background-color: #000000;">
-                <code style="color:white">
-                  a = 334
-                  b= 334
-                  if a == b:
-                   print("equal")
-                </code>
-                <p style="color:#ffffff">Output:</p>
-                <code style="color:green; background-color: #000000;">>> equal</code>
-            </pre>
-            <h3>Else stmt</h3>
-            <p>else statement will exectue a block of statement only when if condition is false.</p>
-            <pre class="terminal" style="background-color: #000000;">
-                <code style="color:white">
-                  a = 334
-                  b = 3334
-                  if a == b:
-                   print("equal")
-                  else:
-                   print("not equal")
-                </code>
-                <p style="color:#ffffff">Output:</p>
-                <code style="color:green; background-color: #000000;">>> not equal</code>
-            </pre>
-            <h3>Elif stmt</h3>
-            <p>elif statement will exectue a block of statement only when above if or another elif condition is false.</p>
-            <pre class="terminal" style="background-color: #000000;">
-                <code style="color:white">
-                  a = 334
-                  b = 3334
-                  if a == b:
-                   print("equal")
-                  elif a < b:
-                   print('done')
-                </code>
-                <p style="color:#ffffff">Output:</p>
-                <code style="color:green; background-color: #000000;">>> done</code>
-            </pre>
+    <div id="container">
+        <div id="sidebar">
+            <nav>
+                <h2>Csq Documentation</h2>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#hello-world-program">Hello World Program</a></li>
+                    <li><a href="#data-types">Data Types</a></li>
+                    <li><a href="#control-structures">Control Structures</a></li>
+                    <li><a href="#functions">Functions</a></li>
+                    <li><a href="#classes">Classes</a></li>
+                    <li><a href="#importing-modules">Importing Modules</a></li>
+                    <li><a href="#practice-programs">Practice Programs</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="content">
+            <h1 id="introduction">Csq Documentation</h1>
+            <h2 id="getting-started">Getting Started</h2>
+            <p>Csq is a high-level, easy-to-use, and transpiled programming language with a syntax very similar to Python and the speed of C++. It was designed by Aniket Kumar in 2022.</p>
+            <p>There are total two functional versions of Csq but in this case we are going to use version (4.2).</p>
+            <pre><code>
+$ git clone https://github.com/CsqLang/Csq4
+$ cd Csq4/
+$ bash build.sh
+            </code></pre>
+            <p>Now you are good to go!</p>
 
-            <h3 style="font-size: 30px;">Loops</h3>
-            <p>To repeat a piece of code we use loop, In Csq there are two types of loop while and for.</p>
-            <h3>For loop</h3>
-            <p>It's a type of loop which iterates the operand given.</p>
-            <pre class="terminal" style="background-color: #000000;">
-                <code style="color:white">
-                    for i in range(5):
-                     print(i)
-                </code>
-                <p style="color:#ffffff">Output:</p>
-                <code style="color:green; background-color: #000000;">>> 
-                0
-                1
-                2
-                3
-                4
-                </code>
-            </pre>
-            <h3>While loop</h3>
-            <p>It's a type of loop which exectues the block of code until condition is false.</p>
-            <pre class="terminal" style="background-color: #000000;">
-                <code style="color:white">
-                    i = 0
-                    while i<5:
-                     print(i)
-                     i = i+1
-                </code>
-                <p style="color:#ffffff">Output:</p>
-                <code style="color:green; background-color: #000000;">>> 
-                0
-                1
-                2
-                3
-                4
-                </code>
-            </pre>
-		</section>
-		<section id="functions">
-			<h2>Functions</h2>
-			<p>They are the piece of code which can be called and used whenever we want.</p>
-            <pre class="terminal" style="background-color: #000000;">
-                <code style="color:white">
-                    def sum(a = 0,b = 0):
-                     return a+b
-                    print(sum(2,4))
-                </code>
-                <p style="color:#ffffff">Output:</p>
-                <code style="color:green; background-color: #000000;">>> 6
-                </code>
-            </pre>
-            Note: functions in Csq doesn't support recursion since it's causes stack overflow and makes the program slow.
-		</section>
-		<section id="classes">
-			<h2>Classes</h2>
-			<p>Classes are the blueprints from which object are created which are having certain predefined variables and methods which can be used to change the flow of the program.</p>
-			<br>
-			<p>In Csq4.2 to define methods or variables inside a class, explicit typing is required no type inference will be working.</p>
-            <pre class="terminal" style="background-color: #000000;">
-                <code style="color:white">
-                    class myclass:
-		     def hi()->void:
-		      print('Hi')
-		    obj = myclass()
-		    obj.hi()
-                </code>
-                <p style="color:#ffffff">Output:</p>
-                <code style="color:green; background-color: #000000;">>> Hi
-                </code>
-            </pre>
-           
-		</section>
-        <section id="imports">
-			<h2>Importing Modules</h2>
-            <p>Importing is a powerful feature to use existing codebase without rewritting or copy it.</p>
-            <h3>What are modules?</h3>
-			<p>Modules are the piece of code with '.csq' extension containing some code that can we used by importing through another csq program or csq module.</p>
-            <h3>mymod.csq</h3>
-            <pre class="terminal" style="background-color: #000000;">
-                <code style="color:white">
-                    def sum(a = 0,b = 0):
-                     return a+b
-                    def square(a = 1):
-                     return a*a
-                </code>
-            </pre>
-            <h3>main.csq</h3>
-            <pre class="terminal" style="background-color: #000000;">
-                <code style="color:white">
-                   import mymod
-                   print(sum(24,87))
-                   print(square(12))
-                </code>
-                <p style="color:#ffffff">Output:</p>
-                <code style="color:green; background-color: #000000;">>> 
-                    111
-                    144
-                </code>
-            </pre>
-            Note: if your module file is inside a sub directory so you need to specify the path like this : '(directory-name)/(module)'.
-            <h3>Example:</h3>
-            <h3>mylibrary/mymod.csq</h3>
-            <pre class="terminal" style="background-color: #000000;">
-                <code style="color:white">
-                    def sum(a = 0,b = 0):
-                     return a+b
-                    def square(a = 1):
-                     return a*a
-                </code>
-            </pre>
-            <h3>main.csq</h3>
-            <pre class="terminal" style="background-color: #000000;">
-                <code style="color:white">
-                   import mylibrary/mymod
-                   print(sum(24,87))
-                   print(square(12))
-                </code>
-                <p style="color:#ffffff">Output:</p>
-                <code style="color:green; background-color: #000000;">>> 
-                    111
-                    144
-                </code>
-            </pre>
-		</section>
-        <section id = "prac">
-            <h2>Practice Programs</h2>
-            <li>Fibonacci Sequence</li>
-            <p>The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding numbers,
-            starting from 0 and 1.
-            Using for loop:
-            <pre class="terminal" style="background-color: #000000;">
-                <code style="color:white">
-                   #Number of terms
-                   n = 10
-                   a = 0
-                   b = 1
-                   for i in range(10):
-                    print(a)
-                    temp = a + b
-                    a = b
-                    b = temp
-                </code>
-                <p style="color:#ffffff">Output:</p>
-                <code style="color:green; background-color: #000000;">>> 
-                    0
-                    1
-                    1
-                    2
-                    3
-                    5
-                    8
-                    13
-                    21
-                    34
-                </code>
-            </pre>
-            <li>Linear Search</li>
-            <p>It's the simplest search algorithm which could work either in unordered or ordered data in which when target element is found so it will break else it will keep traversing..
-            Using for loop:
-            <pre class="terminal" style="background-color: #000000;">
-                <code style="color:white">
-                    index = 0
-                    t = 3
-                    for i in {1,2,3,4,5,7,5}:
-                     if i == t:
-                      print(index)
-                     else:
-                      index = index+1
-                </code>
-                <p style="color:#ffffff">Output:</p>
-                <code style="color:green; background-color: #000000;">>> 2
-                </code>
-            </pre>
-        </section>
-	</main>
-	<footer>
-		<p>Created by Aniket Kumar</p>
-	</footer>
+            <h2 id="hello-world-program">Hello World Program</h2>
+            <p>Let's create our first program in Csq:</p>
+            <pre><code>
+print('Hello, World!')
+            </code></pre>
+            <p>Let's run it:</p>
+            <pre><code>
+$ ./csq cpp hello 'current-directory'
+            </code></pre>
+            <p>Output:</p>
+            <pre><code>
+Hello, World!
+            </code></pre>
+
+            <h2 id="data-types">Data Types</h2>
+            <p>Csq is a statically typed programming language, meaning the data types of a variable can't be changed. The built-in data types are:</p>
+            <pre><code>
+int
+float
+double
+list
+str
+            </code></pre>
+            <p>By default, Csq uses type inference, so no type checking will be there during transpilation, but it will be checked at the end.</p>
+            <p>Creating a Variable:</p>
+            <pre><code>
+a = 405
+print(a)
+            </code></pre>
+            <p>Output:</p>
+            <pre><code>
+405
+            </code></pre>
+            <p>By default, variables use stack memory, which increases performance.</p>
+
+            <h2 id="control-structures">Control Structures</h2>
+            <p>Csq supports all types of control structures present in Python. Be aware of the indentation since Csq doesn't consider tabs as indents.</p>
+
+            <h3>If statement</h3>
+            <p>The <code>if</code> statement will execute a block of statements only when the condition is true.</p>
+            <pre><code>
+a = 334
+b = 334
+if a == b:
+    print("equal")
+            </code></pre>
+            <p>Output:</p>
+            <pre><code>
+equal
+            </code></pre>
+
+            <h3>Else statement</h3>
+            <p>The <code>else</code> statement will execute a block of statements only when the <code>if</code> condition is false.</p>
+            <pre><code>
+a = 334
+b = 3334
+if a == b:
+    print("equal")
+else:
+    print("not equal")
+            </code></pre>
+            <p>Output:</p>
+            <pre><code>
+not equal
+            </code></pre>
+
+            <h3>Elif statement</h3>
+            <p>The <code>elif</code> statement will execute a block of statements only when the above <code>if</code> or another <code>elif</code> condition is false.</p>
+            <pre><code>
+a = 334
+b = 3334
+if a == b:
+    print("equal")
+elif a < b:
+    print('done')
+            </code></pre>
+            <p>Output:</p>
+            <pre><code>
+done
+            </code></pre>
+
+            <h3>Loops</h3>
+            <p>To repeat a piece of code, we use loops. In Csq, there are two types of loops: <code>while</code> and <code>for</code>.</p>
+
+            <h4>For loop</h4>
+            <p>It's a type of loop that iterates the operand given.</p>
+            <pre><code>
+for i in range(5):
+    print(i)
+            </code></pre>
+            <p>Output:</p>
+            <pre><code>
+0
+1
+2
+3
+4
+            </code></pre>
+
+            <h4>While loop</h4>
+            <p>It's a type of loop that executes the block of code until the condition is false.</p>
+            <pre><code>
+i = 0
+while i < 5:
+    print(i)
+    i = i + 1
+            </code></pre>
+            <p>Output:</p>
+            <pre><code>
+0
+1
+2
+3
+4
+            </code></pre>
+
+            <h2 id="functions">Functions</h2>
+            <p>Functions are pieces of code that can be called and used whenever we want.</p>
+            <pre><code>
+def sum(a=0, b=0):
+    return a + b
+
+print(sum(2, 4))
+            </code></pre>
+            <p>Output:</p>
+            <pre><code>
+6
+            </code></pre>
+            <p>Note: Functions in Csq don't support recursion since it can cause a stack overflow and make the program slow.</p>
+
+            <h2 id="classes">Classes</h2>
+            <p>Classes are blueprints from which objects are created. They have certain predefined variables and methods that can be used to change the flow of the program.</p>
+            <p>In Csq4.2, to define methods or variables inside a class, explicit typing is required; no type inference will work.</p>
+            <pre><code>
+class MyClass:
+    def hi() -&gt; void:
+        print('Hi')
+
+obj = MyClass()
+obj.hi()
+            </code></pre>
+            <p>Output:</p>
+            <pre><code>
+Hi
+            </code></pre>
+
+            <h2 id="importing-modules">Importing Modules</h2>
+            <p>Importing is a powerful feature to use an existing codebase without rewriting or copying it.</p>
+            <p>Modules are pieces of code with the '.csq' extension containing some code that can be used by importing them in another Csq program or Csq module.</p>
+            <p>Example:</p>
+            <code>mymod.csq</code>
+            <pre><code>
+def sum(a=0, b=0):
+    return a + b
+
+def square(a=1):
+    return a * a
+            </code></pre>
+
+            <code>main.csq</code>
+            <pre><code>
+import mymod
+print(sum(24, 87))
+print(square(12))
+            </code></pre>
+            <p>Output:</p>
+            <pre><code>
+111
+144
+            </code></pre>
+            <p>Note: If your module file is inside a subdirectory, you need to specify the path like this: '(directory-name)/(module)'.</p>
+            <p>Example:</p>
+            <code>mylibrary/mymod.csq</code>
+            <pre><code>
+def sum(a=0, b=0):
+    return a + b
+
+def square(a=1):
+    return a * a
+            </code></pre>
+
+            <code>main.csq</code>
+            <pre><code>
+import mylibrary/mymod
+print(sum(24, 87))
+print(square(12))
+            </code></pre>
+            <p>Output:</p>
+            <pre><code>
+111
+144
+            </code></pre>
+
+            <h2 id="practice-programs">Practice Programs</h2>
+            <h3>Fibonacci Sequence</h3>
+            <p>The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding numbers, starting from 0 and 1.</p>
+            <p>Using for loop:</p>
+            <pre><code>
+# Number of terms
+n = 10
+a = 0
+b = 1
+for i in range(10):
+    print(a)
+    temp = a + b
+    a = b
+    b = temp
+            </code></pre>
+            <p>Output:</p>
+            <pre><code>
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+            </code></pre>
+
+            <h3>Linear Search</h3>
+            <p>It's the simplest search algorithm that could work with unordered or ordered data. It traverses the data until the target element is found.</p>
+            <p>Using for loop:</p>
+            <pre><code>
+index = 0
+t = 3
+for i in {1, 2, 3, 4, 5, 7, 5}:
+    if i == t:
+        print(index)
+    else:
+        index = index + 1
+            </code></pre>
+            <p>Output:</p>
+            <pre><code>
+2
+            </code></pre>
+        </div>
+    </div>
 </body>
 </html>
-<style>
-    body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-header {
-    background-color: #2D3748;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 20px;
-}
-
-nav {
-    background-color: #E2E8F0;
-    padding: 20px;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav li {
-    margin: 10px 0;
-}
-
-nav a {
-    color: #2D3748;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color: #FFFFFF;
-    background-color: #2D3748;
-}
-
-main {
-    padding: 20px;
-}
-
-section {
-    margin: 40px 0;
-}
-
-h2 {
-    font-size: 28px;
-    color : #02490f;
-}
-
-footer {
-    background-color: #2D3748;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 20px;
-}
-
-</style>
