@@ -117,10 +117,6 @@
                     <li><a href="#hello-world-program">Hello World Program</a></li>
                     <li><a href="#data-types">Data Types</a></li>
                     <li><a href="#control-structures">Control Structures</a></li>
-                    <li><a href="#functions">Functions</a></li>
-                    <li><a href="#classes">Classes</a></li>
-                    <li><a href="#importing-modules">Importing Modules</a></li>
-                    <li><a href="#practice-programs">Practice Programs</a></li>
                 </ul>
             </nav>
         </div>
@@ -139,7 +135,7 @@ $ bash build.sh
             <h2 id="hello-world-program">Hello World Program</h2>
             <p>Let's create our first program in Csq:</p>
             <pre><code>
-print('Hello, World!')
+print 'Hello, World!'
             </code></pre>
             <p>Let's run it:</p>
             <pre><code>
@@ -151,25 +147,17 @@ Hello, World!
             </code></pre>
 
             <h2 id="data-types">Data Types</h2>
-            <p>Csq is a statically typed programming language, meaning the data types of a variable can't be changed. The built-in data types are:</p>
+            <p>Csq4.2 is a dynamically typed programming language so here no type is required to decl a variable
+            <p>Creating a Variable and doing assignment:</p>
             <pre><code>
-int
-float
-double
-list
-str
-            </code></pre>
-            <p>By default, Csq uses type inference, so no type checking will be there during transpilation, but it will be checked at the end.</p>
-            <p>Creating a Variable:</p>
-            <pre><code>
-a = 405
-print(a)
+a := 405
+a = 595
+print a
             </code></pre>
             <p>Output:</p>
             <pre><code>
-405
+595
             </code></pre>
-            <p>By default, variables use stack memory, which increases performance.</p>
 
             <h2 id="control-structures">Control Structures</h2>
             <p>Csq supports all types of control structures present in Python. Be aware of the indentation since Csq doesn't consider tabs as indents.</p>
@@ -180,7 +168,7 @@ print(a)
 a = 334
 b = 334
 if a == b:
-    print("equal")
+    print 'equal'
             </code></pre>
             <p>Output:</p>
             <pre><code>
@@ -190,12 +178,12 @@ equal
             <h3>Else statement</h3>
             <p>The <code>else</code> statement will execute a block of statements only when the <code>if</code> condition is false.</p>
             <pre><code>
-a = 334
-b = 3334
+a := 334
+b := 3334
 if a == b:
-    print("equal")
+    print 'equal'
 else:
-    print("not equal")
+    print 'not equal'
             </code></pre>
             <p>Output:</p>
             <pre><code>
@@ -208,9 +196,9 @@ not equal
 a = 334
 b = 3334
 if a == b:
-    print("equal")
+    print 'equal'
 elif a < b:
-    print('done')
+    print 'done'
             </code></pre>
             <p>Output:</p>
             <pre><code>
