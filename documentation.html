@@ -123,7 +123,7 @@
         <div id="content">
             <h1 id="introduction">Csq Documentation</h1>
             <h2 id="getting-started">Getting Started</h2>
-            <p>Csq is a high-level, easy-to-use, and transpiled programming language with a syntax very similar to Python and the speed of C++. It was designed by Aniket Kumar in 2022.</p>
+            <p>Csq is a high-level, easy-to-use, and transpiled programming language with a syntax very similar to Python and the speed near C++. It was designed by Aniket Kumar in 2022.</p>
             <p>There are total two functional versions of Csq but in this case we are going to use version (4.2).</p>
             <pre><code>
 $ git clone https://github.com/CsqLang/Csq4
@@ -165,8 +165,8 @@ print a
             <h3>If statement</h3>
             <p>The <code>if</code> statement will execute a block of statements only when the condition is true.</p>
             <pre><code>
-a = 334
-b = 334
+a := 334
+b := 334
 if a == b:
     print 'equal'
             </code></pre>
@@ -193,8 +193,8 @@ not equal
             <h3>Elif statement</h3>
             <p>The <code>elif</code> statement will execute a block of statements only when the above <code>if</code> or another <code>elif</code> condition is false.</p>
             <pre><code>
-a = 334
-b = 3334
+a := 334
+b := 3334
 if a == b:
     print 'equal'
 elif a < b:
@@ -208,27 +208,12 @@ done
             <h3>Loops</h3>
             <p>To repeat a piece of code, we use loops. In Csq, there are two types of loops: <code>while</code> and <code>for</code>.</p>
 
-            <h4>For loop</h4>
-            <p>It's a type of loop that iterates the operand given.</p>
-            <pre><code>
-for i in range(5):
-    print(i)
-            </code></pre>
-            <p>Output:</p>
-            <pre><code>
-0
-1
-2
-3
-4
-            </code></pre>
-
             <h4>While loop</h4>
             <p>It's a type of loop that executes the block of code until the condition is false.</p>
             <pre><code>
-i = 0
+i := 0
 while i < 5:
-    print(i)
+    print i
     i = i + 1
             </code></pre>
             <p>Output:</p>
@@ -240,128 +225,6 @@ while i < 5:
 4
             </code></pre>
 
-            <h2 id="functions">Functions</h2>
-            <p>Functions are pieces of code that can be called and used whenever we want.</p>
-            <pre><code>
-def sum(a=0, b=0):
-    return a + b
-
-print(sum(2, 4))
-            </code></pre>
-            <p>Output:</p>
-            <pre><code>
-6
-            </code></pre>
-            <p>Note: Functions in Csq don't support recursion since it can cause a stack overflow and make the program slow.</p>
-
-            <h2 id="classes">Classes</h2>
-            <p>Classes are blueprints from which objects are created. They have certain predefined variables and methods that can be used to change the flow of the program.</p>
-            <p>In Csq4.2, to define methods or variables inside a class, explicit typing is required; no type inference will work.</p>
-            <pre><code>
-class MyClass:
-    def hi() -&gt; void:
-        print('Hi')
-
-obj = MyClass()
-obj.hi()
-            </code></pre>
-            <p>Output:</p>
-            <pre><code>
-Hi
-            </code></pre>
-
-            <h2 id="importing-modules">Importing Modules</h2>
-            <p>Importing is a powerful feature to use an existing codebase without rewriting or copying it.</p>
-            <p>Modules are pieces of code with the '.csq' extension containing some code that can be used by importing them in another Csq program or Csq module.</p>
-            <p>Example:</p>
-            <code>mymod.csq</code>
-            <pre><code>
-def sum(a=0, b=0):
-    return a + b
-
-def square(a=1):
-    return a * a
-            </code></pre>
-
-            <code>main.csq</code>
-            <pre><code>
-import mymod
-print(sum(24, 87))
-print(square(12))
-            </code></pre>
-            <p>Output:</p>
-            <pre><code>
-111
-144
-            </code></pre>
-            <p>Note: If your module file is inside a subdirectory, you need to specify the path like this: '(directory-name)/(module)'.</p>
-            <p>Example:</p>
-            <code>mylibrary/mymod.csq</code>
-            <pre><code>
-def sum(a=0, b=0):
-    return a + b
-
-def square(a=1):
-    return a * a
-            </code></pre>
-
-            <code>main.csq</code>
-            <pre><code>
-import mylibrary/mymod
-print(sum(24, 87))
-print(square(12))
-            </code></pre>
-            <p>Output:</p>
-            <pre><code>
-111
-144
-            </code></pre>
-
-            <h2 id="practice-programs">Practice Programs</h2>
-            <h3>Fibonacci Sequence</h3>
-            <p>The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding numbers, starting from 0 and 1.</p>
-            <p>Using for loop:</p>
-            <pre><code>
-# Number of terms
-n = 10
-a = 0
-b = 1
-for i in range(10):
-    print(a)
-    temp = a + b
-    a = b
-    b = temp
-            </code></pre>
-            <p>Output:</p>
-            <pre><code>
-0
-1
-1
-2
-3
-5
-8
-13
-21
-34
-            </code></pre>
-
-            <h3>Linear Search</h3>
-            <p>It's the simplest search algorithm that could work with unordered or ordered data. It traverses the data until the target element is found.</p>
-            <p>Using for loop:</p>
-            <pre><code>
-index = 0
-t = 3
-for i in {1, 2, 3, 4, 5, 7, 5}:
-    if i == t:
-        print(index)
-    else:
-        index = index + 1
-            </code></pre>
-            <p>Output:</p>
-            <pre><code>
-2
-            </code></pre>
         </div>
     </div>
 </body>
