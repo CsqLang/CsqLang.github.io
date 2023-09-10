@@ -2,84 +2,9 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    <link rel="stylesheet" href="./static/documentation.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
-
     <title>Csq Documentation</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        #container {
-            display: flex;
-            flex: 1;
-        }
-
-        #sidebar {
-            flex: 0 0 200px;
-            background-color: #f1f1f1;
-            padding: 20px;
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            overflow-y: auto;
-        }
-
-        #content {
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        h2 {
-            margin-top: 0;
-        }
-
-        nav {
-            padding: 10px;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav li {
-            margin-bottom: 10px;
-        }
-    </style>
-    
-    <style>
-        /* Styling for code blocks */
-        pre {
-            background-color: #f1f1f1;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            overflow: auto;
-        }
-    
-        code {
-            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-        }
-    
-        /* Styling for the copy button */
-        .copy-button {
-            background-color: #464646;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            padding: 5px 10px;
-            cursor: pointer;
-            margin: 5px 0;
-        }
-    </style>
-    
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             document.querySelectorAll('pre code').forEach((block) => {
