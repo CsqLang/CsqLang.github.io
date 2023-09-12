@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="./static/documentation.css">
 	<link rel="icon" type="image/x-icon" href="./media/logo.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script src="./static/index.js"></script>
     <title>Csq Documentation</title>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
@@ -22,16 +23,18 @@
                         textArea.select();
                         document.execCommand('copy');
                         document.body.removeChild(textArea);
-                        alert('Code copied to clipboard!');
+
+                        // calling our copy button rest function in `index.js`
+                        rest_copy_btn_name();
+                        copyButton.innerText = 'Copied to clipboard!';
                     });
                     parent.insertBefore(copyButton, block);
                 }
             });
         });
     </script>
-
-    
 </head>
+
 <body>
     <div id="container">
         <div id="sidebar">
