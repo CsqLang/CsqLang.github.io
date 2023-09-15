@@ -3,27 +3,19 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Csq</title>
-	<link rel="stylesheet" href="style.css">
-	<link rel="icon" type="image/x-icon" href="logo.png">
+	<link rel="stylesheet" href="./static/style.css">
+	<link rel="icon" type="image/x-icon" href="./media/logo.png">
+	<script src="./static/index.js"></script>
 </head>
-	<script>
-		var counter = 0;
-		function increment() {
-  			counter++;
-  			document.getElementById("views").innerHTML = counter;
-		}
-
-
-	</script>
-<body onload = "increment()">
+<body onload="increment()">
 	<header>
 		<nav>
 			<ul>
 				<li><a href="#about">About</a></li>
 				<li><a href="/documentation.html">Docs</a></li>
 				<li><a href="#download">Install</a></li>
-				<li><a href = "/feedback.html">Feedback</a></li>
-<!-- 				<li>Views:<span id = 'views'>0</span></li> -->
+				<li><a href="/feedback.html">Feedback</a></li>
+				<!-- <li>Views:<span id='views'>0</span></li> -->
 			</ul>
 		</nav>
 	</header>
@@ -31,26 +23,25 @@
 	<main>
 		<section id="home">
 			<div class="home-content">
-				<h1 class = "title_csq">Csq</h1>
-				<h5 class = "csqdef">Csq is a high level programming language which is inspired by the speed of C++ and productivity of Python.</h5>
+				<h1 class="title_csq">Csq</h1>
+				<h5 class="csqdef">Csq is a high level programming language which is inspired by the speed of C++ and productivity of Python.</h5>
 				<a href="#download" class="btn">Get Started</a>
 			</div>
 		</section>
 
-		<section id="about" style="background-color: #007d9c; padding: 20px;">
-			<h2 style = "color:white">About</h2>
-			<p style = "color:white"> Csq is a programming language created by <a href = "https://github.com/AniketKumar2500">Aniket Kumar</a> in 2022 which provides:</p>
-			<li style="color: #ffffff; font-weight: 600; font-family: Arial, Helvetica, sans-serif;">Easy Syntax</li>
-			<li style="color: #ffffff; font-weight: 600; font-family: Arial, Helvetica, sans-serif;">Fast Speed</li>
-			<li style="color: #ffffff; font-weight: 600; font-family: Arial, Helvetica, sans-serif;">Dynamically Typed</li>
-			<li style="color: #ffffff; font-weight: 600; font-family: Arial, Helvetica, sans-serif;">Memory Safety</li>
+		<section id="about">
+			<h2>About</h2>
+			<p>Csq is a programming language created by <a href="https://github.com/AniketKumar2500">Aniket Kumar</a> in 2022 which provides:</p>
+			<li>Easy Syntax</li>
+			<li>Fast Speed</li>
+			<li>Dynamically Typed</li>
+			<li>Memory Safety</li>
 			<br>
-			<h3 style="color: #ffffff;">How it works?</h3>
-			<p style="color: #ffffff;">It's a language which is written in C & C++ and having the syntax very similar to Python. It uses a compiler which compiles the code into  C++.</p>
-
+			<h3>How it works?</h3>
+			<p>It's a language which is written in C & C++ and having the syntax very similar to Python. It uses a compiler which compiles the code into  C++.</p>
 		</section>
 
-		<section id="download" style="padding: 20px;">
+		<section id="download">
 			<h2>Download for linux</h2>
 			<div class="commands-container">
 			  <pre class="terminal">
@@ -63,138 +54,26 @@
 			</div>			 
 			<h12>Now you are good to go!!</h12> 
 		</section>
-		  
-		<section id="Community" style="padding: 20px;background-color: #dafcff;">
-			<h2 style="color:#080071">Community</h2>
+
+		<section id="Community">
+			<h2>Community</h2>
 			<p>We are having a organization on github which holds the repo of Csq programming language and anyone could contribute since it's open source.</p>
 			For contributing visit:
-			<a href = "https://github.com/CsqLang/">CsqLang Org</a>
-			<a href = "https://github.com/CsqLang/"><img src = "logo.png"></a>
+			<a href="https://github.com/CsqLang/">CsqLang Org</a>
+			<a href="https://github.com/CsqLang/">
+				<img src="./media/logo.png">
+			</a>
 			<h3>Our Contributers:</h3>
-			<a href = "https://github.com/AniketKumar2500" ><img class = 'cont_img' src = "aniketkr.png"></img></a>
-			<a href = "https://github.com/WithSJ" ><img class = 'cont_img' src = "sj.jpeg"></img></a>
-<!-- 			<a href = "https://github.com/AniketKumar2500" ><img class = 'cont_img'></img></a> -->
+			<a href = "https://github.com/AniketKumar2500" class="contributors">
+				<img src = "./media/aniketkr.png">
+			</a>
+			<a href = "https://github.com/WithSJ" class="contributors">
+				<img src = "./media/sj.jpeg">
+			</a>
+			<!-- <a href = "https://github.com/AniketKumar2500" class="contributors">
+				<img>
+			</a> -->
 		</section>
-		  
 	</main>
 </body>
-<style>
-    * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-family: Arial, sans-serif;
-	font-size: 25px;
-	line-height: 1.5;
-}
-
-header {
-	background-color: hsl(196, 100%, 53%);
-	color: #fff;
-}
-
-nav ul {
-	list-style: none;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	padding: 1rem;
-}
-
-nav li {
-	margin-left: 2rem;
-}
-
-nav a {
-	color: #fff;
-	text-decoration: none;
-}
-
-#home {
-	background-color: rgb(255, 255, 255);
-	height: 80vh;
-	display: flex;
-	align-items: center;
-}
-
-.csqdef{
-	color:rgb(0, 43, 128);
-	font-weight: bold;
-	font-size: 25px;
-	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	margin-bottom: 20px;
-}
-
-.home-content {
-	max-width: 80%;
-	margin: auto;
-	text-align: center;
-}
-
-.home-content h1 {
-	font-size: 90px;
-	margin-bottom: 1rem;
-}
-
-.title_csq{
-	color:rgb(0, 134, 217);
-}
-
-.home-content p{
-font-size: 1.2rem;
-margin-bottom: 2rem;
-}
-
-.btn {
-background-color: #fbff00;
-color: #000000;
-font-weight: bold;
-padding: 1rem 2rem;
-text-decoration: none;
-border-radius: 2px;
-}
-
-.btn:hover {
-background-color: #fff;
-color: #333;
-transition: all 0.3s ease-in-out;
-}
-
-#about {
-	background-color: #45ffdd;
-	height: 100vh;
-	align-items: center;
-	border:1px solid #999;
-}
-
-#about h2 {
-margin-bottom: 1rem;
-}
-.terminal {
-  background-color: #ffffff;
-  color: #000000;
-  padding: 20px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 16px;
-  line-height: 1.5;
-  overflow-x: auto;
-  border-radius: 5px;
-}
-
-.terminal code {
-  display: block;
-  white-space: pre;
-}
-
-
-.cont_img{
-	border-radius : 50%;
-        max-height: 100px;
-}
-
-</style>
 </html>
-
